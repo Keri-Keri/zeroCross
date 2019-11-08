@@ -8,7 +8,6 @@ public class Main {
 
 
         while (!(zeroCross[0][0] == 1 && zeroCross[1][0] == 1 && zeroCross[2][0] == 1)) {
-            while (!(zeroCross[0][1] == 1 && zeroCross[1][1] == 1 && zeroCross[2][1] == 1)) {
 
 
                 int horizontal = scanner.nextInt();
@@ -25,7 +24,7 @@ public class Main {
                     System.out.println();
                 }
             }
-        }
+
         System.out.println("Victory");
 
 
