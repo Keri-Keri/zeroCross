@@ -7,7 +7,15 @@ public class Main {
         int[][] zeroCross = new int[3][3];
 
 
-        while (!(zeroCross[0][0] == 1 && zeroCross[1][0] == 1 && zeroCross[2][0] == 1)) {
+        while (!(zeroCross[0][0] == 1 && zeroCross[1][0] == 1 && zeroCross[2][0] == 1)||
+                !(zeroCross[0][1] == 1 && zeroCross[1][1] == 1 && zeroCross[2][1] == 1)||
+                !(zeroCross[0][2] == 1 && zeroCross[1][2] == 1 && zeroCross[2][2] == 1)||
+                !(zeroCross[0][0] == 1 && zeroCross[0][1] == 1 && zeroCross[0][2] == 1)||
+                !(zeroCross[0][1] == 1 && zeroCross[1][1] == 1 && zeroCross[1][2] == 1)||
+                !(zeroCross[0][2] == 1 && zeroCross[1][2] == 1 && zeroCross[2][2] == 1)||
+                !(zeroCross[0][0] == 1 && zeroCross[1][1] == 1 && zeroCross[2][2] == 1)||
+                !(zeroCross[0][2] == 1 && zeroCross[1][1] == 1 && zeroCross[0][2] == 1)
+        ) {
 
 
                 int horizontal = scanner.nextInt();
