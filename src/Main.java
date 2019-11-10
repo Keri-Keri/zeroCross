@@ -2,26 +2,20 @@ import java.util.Scanner;
 
 public class Main {
 
+
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int[][] zeroCross = new int[3][3];
 
 
-        while (!(zeroCross[0][0] == 1 && zeroCross[1][0] == 1 && zeroCross[2][0] == 1)||
-                !(zeroCross[0][1] == 1 && zeroCross[1][1] == 1 && zeroCross[2][1] == 1)||
-                !(zeroCross[0][2] == 1 && zeroCross[1][2] == 1 && zeroCross[2][2] == 1)||
-                !(zeroCross[0][0] == 1 && zeroCross[0][1] == 1 && zeroCross[0][2] == 1)||
-                !(zeroCross[0][1] == 1 && zeroCross[1][1] == 1 && zeroCross[1][2] == 1)||
-                !(zeroCross[0][2] == 1 && zeroCross[1][2] == 1 && zeroCross[2][2] == 1)||
-                !(zeroCross[0][0] == 1 && zeroCross[1][1] == 1 && zeroCross[2][2] == 1)||
-                !(zeroCross[0][2] == 1 && zeroCross[1][1] == 1 && zeroCross[0][2] == 1)
-        ) {
+        while (!IsWiner(zeroCross)) {
 
 
-                int horizontal = scanner.nextInt();
-                int vertical = scanner.nextInt();
+                int line = scanner.nextInt();
+                int column = scanner.nextInt();
 
-                zeroCross[horizontal][vertical] = 1;
+                zeroCross[line][column] = 1;
 
 
                 for (int i = 0; i < zeroCross.length; i++) {
@@ -37,4 +31,23 @@ public class Main {
 
 
     }
+
+
+    public static boolean IsWiner(int[][] zeroCross){
+        return
+                (zeroCross[0][0] == 1 && zeroCross[1][0] == 1 && zeroCross[2][0] == 1) || // 111 - !true = false; 100 - !false = true
+                (zeroCross[0][1] == 1 && zeroCross[1][1] == 1 && zeroCross[2][1] == 1) ||
+                (zeroCross[0][2] == 1 && zeroCross[1][2] == 1 && zeroCross[2][2] == 1) ||
+
+                (zeroCross[0][0] == 1 && zeroCross[0][1] == 1 && zeroCross[0][2] == 1) ||
+                (zeroCross[1][0] == 1 && zeroCross[1][1] == 1 && zeroCross[1][2] == 1) ||
+                (zeroCross[2][0] == 1 && zeroCross[2][1] == 1 && zeroCross[2][2] == 1) ||
+
+                (zeroCross[0][0] == 1 && zeroCross[1][1] == 1 && zeroCross[2][2] == 1) ||
+                (zeroCross[0][2] == 1 && zeroCross[1][1] == 1 && zeroCross[2][0] == 1);
+
+
+
+    }
 }
+
